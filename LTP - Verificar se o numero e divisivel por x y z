@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main(void) {
+  //declarar variaveis
+  int inNum;
+
+  //orientar usuario
+  printf("Digite um valor inteiro: \n");
+  scanf("%d", &inNum);
+  
+  printf("\n");
+  printf("Você digitou o número %d.\n", inNum);
+
+  //Verificar se é divisivel por 10
+  if((inNum % 10)==0)
+  {
+    printf("%d é divisivel por 10.\n", inNum);
+  }
+  else
+  {
+    printf("%d não é divisivel por 10.\n", inNum);
+  }
+
+  //Verificar se é divisivel por 5
+  if((inNum % 5)==0)
+  {
+    printf("%d é divisivel por 5.\n", inNum);
+  }
+  else
+  {
+    printf("%d não é divisivel por 5.\n", inNum);
+  }
+  
+  //Verificar se é divisivel por 2
+  if((inNum % 2)==0)
+  {
+    printf("%d é divisivel por 2.\n", inNum);
+  }
+  else
+  {
+    printf("%d não é divisivel por 2.\n", inNum);
+  }
+
+  //fim
+  return 0;
+}
