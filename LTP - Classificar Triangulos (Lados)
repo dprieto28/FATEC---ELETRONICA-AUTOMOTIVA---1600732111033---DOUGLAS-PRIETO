@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main(void) {
+  //declarar variaveis
+  int inL1, inL2, inL3, outTipo;
+
+  //orientar usuario
+  printf("Digite o primeiro lado do triangulo: \n");
+  scanf("%d", &inL1);
+  printf("Digite o segundo lado do triangulo: \n");
+  scanf("%d", &inL2);
+  printf("Digite o terceiro lado do triangulo: \n");
+  scanf("%d", &inL3);
+  
+  //Verificar se Triângulo Equilátero
+  if(inL1==inL2 && inL2==inL3)
+  {
+    outTipo = 1;
+  }
+
+  //Verificar se Triângulo Escaleno
+  if(inL1!=inL2 && inL2!=inL3)
+  {
+    outTipo = 2;
+  }
+
+  //mostrar a classificacao
+  switch(outTipo)
+  {
+    case 1: printf("Triângulo Equilátero");
+    break;
+
+    case 2: printf("Triângulo Escaleno");
+    break;
+
+    default: printf("Triângulo Isosceles");
+  }
+
+  //fim
+  return 0;
+}
