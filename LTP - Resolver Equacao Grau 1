@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(void) {
+  //declarar variaveis
+  float inCoef_a, inCoef_b, out_x;
+
+  //orientar usuario
+  printf("Digite o primeiro termo ( a ) da equação do 1° grau: \n");
+  scanf("%f", &inCoef_a);
+
+  if(inCoef_a == 0)
+  {
+    printf("Erro, o coeficiente do termo \"a\" deve ser diferente de zero. \n");
+  }
+  else
+  {
+    printf("Digite o segundo termo ( b ) da equação do 1° grau: \n");
+    scanf("%f", &inCoef_b);
+  }
+
+  //Calcular
+  if(inCoef_a !=0)
+  {
+    out_x = (-1 * inCoef_b) / inCoef_a;
+    printf("O valor de \"x\" é: %.2f \n", out_x);
+  }
+
+  //fim
+  return 0;
+}
