@@ -1,0 +1,37 @@
+#include <stdio.h>
+//Mostrar o maior valor entre 2 valores
+int main(void) {
+
+//Declaracao de variaveis
+float inVal1, inVal2, outMaior;
+
+//Orientar o usuario sobre a entrada de dados e guardar na memoria
+printf("Digite um valor:\n");
+scanf("%f", &inVal1);
+printf("Seu primeiro valor é: %0.1f\n\n", inVal1);
+
+printf("Digite um outro valor:\n\n");
+scanf("%f", &inVal2);
+printf("Seu segundo valor é: %0.1f\n\n", inVal2);
+
+//Verificar se os valores sao iguais
+if(inVal1==inVal2)
+{
+  printf("Os valores são iguais, não há valor maior. \n");
+  //Valores iguais, finalizar
+  return 0;
+}
+
+//Verificar maior valor
+if(inVal1>inVal2)
+{
+  printf("O maior valor é o primeiro: %0.1f \n\n", inVal1);
+}
+else
+{
+  printf("O maior valor é o segundo: %0.1f \n\n", inVal2);
+}
+
+//Fim
+  return 0;
+}
