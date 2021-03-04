@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void) {
+  //declarar variaveis
+  float inVcc, inR1, inR2, Corrente, outV1, outV2;
+  //orientar usuario
+  printf("Para calcular a corrente e tensao em cada resistor, favor inserir: \n\n");
+  printf("a. valor da fonte de tensão [Volts]: \n");
+  scanf("%f", &inVcc);
+  printf("b. valor de R1 [ohm]: \n");
+  scanf("%f", &inR1);
+  printf("c. valor de R2 [ohm]: \n");
+  scanf("%f", &inR2);
+
+  //Calculos
+  Corrente = inVcc / (inR1+inR2);
+  outV1 = inR1*Corrente;
+  outV2 = inR2*Corrente;
+
+  //Mostrar resultados
+  printf("\n");
+  printf("O valor de It = I1 = I2 = %.2f Ampéres.\n\n", Corrente);
+  printf("O valor de V1 = %.2f Volts.\n\n", outV1);
+  printf("O valor de V2 = %.2f Volts.\n\n", outV2);
+
+  //fim
+  return 0;
+}
