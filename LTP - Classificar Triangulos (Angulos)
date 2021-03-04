@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main(void) {
+  //declarar variaveis
+  int inAng1, inAng2, inAng3;
+
+  //orientar usuario
+  printf("Digite o primeiro angulo do triangulo: \n");
+  scanf("%d", &inAng1);
+  printf("Digite o segundo angulo do triangulo: \n");
+  scanf("%d", &inAng2);
+  printf("Digite o terceiro angulo do triangulo: \n");
+  scanf("%d", &inAng3);
+  
+  printf("\n");  
+  printf("OS angulos foram %d, %d e %d. Logo:\n", inAng1, inAng2, inAng3);  
+  //Verificar se Triângulo Retângulo
+  if((inAng1==90) || (inAng2==90) || (inAng3==90))
+  {
+    printf("Triângulo Retângulo");
+  }
+  //Verificar se Triângulo Obtusângulo
+  else if ((inAng1>90) || (inAng2>90) || (inAng3>90))
+  {
+    printf("Triângulo Obtusângulo");
+  }
+  //Triângulo Acutângulo
+  else
+  {
+    printf("Triângulo Acutângulo");
+  }
+
+  //fim
+  return 0;
+}
