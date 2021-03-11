@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void) {
+  
+  //Declarar variaveis
+  int inA, inB, aux;
+
+  //Valores das variaveis
+  inA = 10;
+  inB = 20;
+
+  //Inverter valores das variaveis
+  aux = inA;
+  inA = inB;
+  inB = aux;
+
+  //Apresentar resultado
+  printf("\n\n");
+  printf("Variável 'A' apresenta agora valor: %d \n", inA);
+  printf("\n\n");
+  printf("Variável 'B' apresenta agora valor: %d \n", inB);
+  return 0;
+}
