@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main(void) {
+  
+  //Declarar variaveis
+  float inAltura, inSexo, outPesoIdeal;
+
+  //orientar usuario
+  printf("\n\n");
+  printf("Calculo do Peso Ideal conforme ALTURA e PESO: \n");
+  printf("\n\n");
+  printf("Informe a sua altura [m]: \n");
+  scanf("%f", &inAltura);
+  printf("\n\n");
+  printf("Informe o seu sexo [Digite 0 ou 1]: \n");
+  printf("0 - Feminino \n");
+  printf("1 - Masculino \n");
+  scanf("%f", &inSexo);
+
+  //Calculos
+  if(inSexo == 1)
+  {
+    outPesoIdeal = (72.7 * inAltura) - 58;
+  }
+  else if(inSexo == 0)
+  {
+    outPesoIdeal = (62.1 * inAltura) - 44.7;
+  }
+  else
+  {
+    printf("Os dados não são válidos \n");
+  }
+  //Apresentar resultado
+  printf("Seu Peso Ideal é: %.1f kg.\n", outPesoIdeal);
+  return 0;
+}
