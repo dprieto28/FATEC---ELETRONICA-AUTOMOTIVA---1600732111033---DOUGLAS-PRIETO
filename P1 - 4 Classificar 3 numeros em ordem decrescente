@@ -1,0 +1,90 @@
+#include <stdio.h>
+
+int main(void) {
+  
+  //Declarar variaveis
+  int e_nro_1, e_nro_2, e_nro_3;
+
+  //orientar usuario
+  printf("\n\n");
+  printf("Classificar numeros em ordem crescente \n");
+  printf("\n\n");
+  printf("Informe primeiro valor [inteiro]:\n");
+  scanf("%d", &e_nro_1);
+  printf("\n\n");
+  printf("Informe segundo valor [inteiro]:\n");
+  scanf("%d", &e_nro_2);
+  printf("\n\n");
+  printf("Informe terceiro valor [inteiro]:\n");
+  scanf("%d", &e_nro_3);
+
+  //Condicional
+  if(e_nro_1 > e_nro_2)
+  {
+    if(e_nro_2 > e_nro_3)
+    {
+      //Apresentar resultado1
+      printf("\n\n");
+      printf("Em ordem crescente: \n");
+      printf("%d \n", e_nro_1);
+      printf("%d \n", e_nro_2);
+      printf("%d \n", e_nro_3);
+    }
+    else
+    {
+      if(e_nro_1 > e_nro_3)
+      {
+        //Apresentar resultado2
+        printf("\n\n");
+        printf("Em ordem crescente: \n");
+        printf("%d \n", e_nro_1);
+        printf("%d \n", e_nro_3);
+        printf("%d \n", e_nro_2);
+      }
+      else
+      {
+        //Apresentar resultado3
+        printf("\n\n");
+        printf("Em ordem crescente: \n");
+        printf("%d \n", e_nro_3);
+        printf("%d \n", e_nro_1);
+        printf("%d \n", e_nro_2);
+      }
+    }
+  }
+  else
+  {
+    if(e_nro_1 > e_nro_3)
+    {
+      //Apresentar resultado4
+      printf("\n\n");
+      printf("Em ordem crescente: \n");
+      printf("%d \n", e_nro_2);
+      printf("%d \n", e_nro_1);
+      printf("%d \n", e_nro_3);
+    }
+    else
+    {
+      if(e_nro_2 > e_nro_3)
+      {
+        //Apresentar resultado5
+        printf("\n\n");
+        printf("Em ordem crescente: \n");
+        printf("%d \n", e_nro_2);
+        printf("%d \n", e_nro_3);
+        printf("%d \n", e_nro_1);
+      }
+      else
+      {
+        //Apresentar resultado6
+        printf("\n\n");
+        printf("Em ordem crescente: \n");
+        printf("%d \n", e_nro_3);
+        printf("%d \n", e_nro_2);
+        printf("%d \n", e_nro_1);
+      }
+    }
+  }
+
+  return 0;
+}
