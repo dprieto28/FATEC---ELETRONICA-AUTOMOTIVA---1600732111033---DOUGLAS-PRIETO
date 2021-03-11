@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(void) {
+  
+  //Declarar variaveis
+  float inR1, inR2, inR3, inR4, outReq;
+
+  //Orientar usuario
+  printf("\n\n");
+  printf("Calculo da Resistencia Equivalente em Serie: \n");
+  printf("\n\n");
+  printf("Informe o valor de R1 [ohm 0.0]: \n");
+  scanf("%f", &inR1);
+  printf("\n\n");
+  printf("Informe o valor de R2 [ohm 0.0]: \n");
+  scanf("%f", &inR2);
+  printf("\n\n");
+  printf("Informe o valor de R3 [ohm 0.0]: \n");
+  scanf("%f", &inR3);
+  printf("\n\n");
+  printf("Informe o valor de R4 [ohm 0.0]: \n");
+  scanf("%f", &inR4);
+
+  //Calculos
+  outReq = inR1+inR2+inR3+inR4;
+  
+  //Apresentar resultado
+  printf("A Resistencia Equivalente é: %.1f ohm.\n", outReq);
+  return 0;
+} 
