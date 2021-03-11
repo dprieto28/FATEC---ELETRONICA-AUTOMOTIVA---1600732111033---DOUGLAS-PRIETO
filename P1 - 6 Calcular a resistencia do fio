@@ -1,0 +1,72 @@
+#include <stdio.h>
+
+int main(void) {
+ 
+   //Declarar variaveis
+  float inDiam, inCompr, inTemp, outResist, Ro, coefTemp;
+  int inMaterial;
+
+  //Orientar usuario
+  printf("\n\n");
+  printf("Calculo da Resistencia do Fio: \n");
+  printf("\n\n");
+  printf("Selecione o material do fio [digite 1 a 5]: \n");
+  printf("1 - Prata. \n");
+  printf("2 - Cobre. \n");
+  printf("3 - Ouro. \n");
+  printf("4 - Alumínio. \n");
+  printf("5 - Tungstênio. \n\n");
+  scanf("%d", &inMaterial);
+
+  //Variavel recebe Resistividade e Coeficiente de Temperatura
+  switch(inMaterial)
+  {
+    case 1:
+      printf("Prata. \n\n");
+      Ro = 0.00000159;
+      coefTemp =0.038;
+    break;
+    case 2:
+      printf("Cobre. \n\n");
+      Ro = 0.00000172;
+      coefTemp =0.039;
+    break;
+    case 3:
+      printf("Ouro. \n\n");
+      Ro = 0.00000244;
+      coefTemp =0.034;
+    break;
+    case 4:
+      printf("Alumínio. \n\n");
+      Ro = 0.00000292;
+      coefTemp =0.039;
+    break;
+    case 5:
+      printf("Tungstênio. \n\n");
+      Ro = 0.0000056;
+      coefTemp =0.045;
+    break;
+    default:
+      printf("Material incorreto. Erro! \n\n");
+      return 0;
+}
+
+  //Orientar usuario
+  printf("Informe o diâmetro do fio [mm]: ");
+  scanf("%f", &inDiam);
+  printf("\n");
+  printf("Informe o comprimento do fio [m]: ");
+  scanf("%f", &inCompr);
+  printf("\n");
+  printf("Informe a temperatura de uso [Celsius]: ");
+  scanf("%f", &inTemp);
+  printf("\n");
+
+  //Calcular Resistencia do Fio
+  outResist = (Ro * (1 + coefTemp * (inTemp - 20)) * inCompr * 12732.39545) / (inDiam * inDiam);
+
+  //Mostrar resultado
+  printf("A resistência do fio é [ohm]: %.2f", outResist);
+
+  return 0;
+}
