@@ -22,7 +22,7 @@ int main(void) {
     //Verificar um a um quais tem resto zero
     impar = i % 2;
 
-    //Apresentar resultado para os que o resto for zero
+    //Apresentar resultado para os que o resto for diferente de zero
     if(impar != 0)
     {
     printf("%d \n", i);
