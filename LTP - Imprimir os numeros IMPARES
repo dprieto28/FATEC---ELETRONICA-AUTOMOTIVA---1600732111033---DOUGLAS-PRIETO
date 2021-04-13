@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main(void) {
+  
+  //Declarar variaveis
+  int e_nro, impar;
+
+  //Orientar usuario
+  printf("\n\n");
+  printf("Programa C para imprimir numeros ÍMPARES até o número inserido pelo usuário\n");
+  printf("\n\n");
+  printf("Informe um número [inteiro]: ");
+  scanf("%d", &e_nro);
+  printf("\n\n");
+  printf("Numeros ÍMPARES: \n");
+
+  //Realizar a impressão de todos os PARES
+
+  int i=0;
+  while(i <= e_nro)
+  {
+    //Verificar um a um quais tem resto zero
+    impar = i % 2;
+
+    //Apresentar resultado para os que o resto for zero
+    if(impar != 0)
+    {
+    printf("%d \n", i);
+    }
+
+    i++;
+  }
+  return 0;
+}
