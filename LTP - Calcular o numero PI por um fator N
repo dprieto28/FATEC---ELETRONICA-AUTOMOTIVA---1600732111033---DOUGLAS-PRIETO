@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main(void) {
+
+    //Declarar variaveis
+    int num;
+    float div, soma, pi;
+
+    //Funcao do codigo
+    printf("\n\n");
+    printf("Programa C para determinar o número PI por um fator informado pelo usuário\n");
+    printf("\n\n");
+
+    while (1) {
+        //Orientar usuario
+        printf("\n");
+        printf("Informe um número [inteiro positivo]: ");
+        scanf("%d", &num);
+        printf("\n");
+
+
+
+        float i_num = 1, i_impar = 1;
+        int sinal = 1;
+        soma = 0;
+        while (i_num <= num) {
+            //Realizar as divisoes 1/impares
+            div = (1 / i_impar) * (sinal);
+            //proximo numero impar
+            i_impar += 2;
+            //proxima sequencia
+            i_num++;
+            //inverter sinal
+            sinal *= -1;
+            //somar os resultados
+            soma += div;
+        }
+        //calcular PI com 4 * a somatoria das divisoes
+        pi = 4 * soma;
+        //mostrar o resultado
+        printf("O número PI para o fator %d é: %f\n", num, pi);
+    }
+    return 0;
+}
