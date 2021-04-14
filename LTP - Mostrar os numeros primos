@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main(void) {
+
+    //Declarar variaveis
+    int num, aux, qtd_zero;
+
+    //Funcao do codigo
+    printf("\n\n");
+    printf("Programa C para verificar se um numero é primo\n");
+    printf("\n\n");
+
+    while (1) {
+        //Orientar usuario
+        printf("\n");
+        printf("Informe um número [inteiro]: ");
+        scanf("%d", &num);
+        printf("\n");
+
+        //Realizar a divisao a partir de 1 com incremento de 1 em 1
+        int i = 1;
+        qtd_zero = 0;
+        while (i <= num) {
+            //Resto da divisao
+            aux = num % i;
+
+            //Contar quantidade de resto zero
+            if (aux == 0) {
+                qtd_zero++;
+            }
+            i++;
+        }
+
+        if (qtd_zero == 2) {
+            printf("%d é um número primo\n", num);
+        } else {
+            printf("%d não é um número primo\n", num);
+        }
+    }
+    return 0;
+}
