@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+/*******************
+Douglas Prieto da Silva
+Fatec S.A. 2021-1
+********************/
+
+int main(void) {
+
+    //Declarar variaveis
+    unsigned int e_valor, i1, i2;
+    float soma, fatoracao;
+
+    //Descricao do codigo
+    printf("Calcular o número de euler com a resolucao informada pelo usuário\n\n");
+
+    //Orientar usuario
+    printf("Informe um número [inteiro positivo]: ");
+    scanf("%i", &e_valor);
+
+    //Carregar dados iniciais
+    i1 = e_valor;
+    i2 = e_valor;
+    soma = 0;
+
+    while (i2 >= 1) //calcular cada inverso da fatoracao
+    {
+        fatoracao = 1;
+
+        while (i1 > 1) {
+            fatoracao *= i1; //fatorar cada denominador
+            i1--;
+        }
+
+        soma = soma + (1 / fatoracao); //somar o inverso de cada denominador
+        i2--;
+
+        i1 = i2;
+    }
+
+    soma++; //somar 1 ao total
+
+    //mostrar o resultado
+    printf("\n O número de euler é: %f \n", soma);
+
+    return 0;
+}
