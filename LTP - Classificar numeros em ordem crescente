@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/*******************
+Douglas Prieto da Silva
+Fatec S.A. 2021-1
+********************/
+
 int main(void) {
   //declarar variaveis
   int in1, in2, in3, out1, out2, out3;
