@@ -1,0 +1,47 @@
+int main(void) {
+
+    //Declarar variaveis
+    unsigned int e_num, calcular = 1;
+    unsigned int v_binario[10];
+    //Funcao do Programa
+    printf("\n\n\n*** CONVERTE DECIMAL PARA BINÁRIO: MÁX 10 BITS ***\n\n\n");
+
+    while (1) //Loop infinito
+    {
+
+        while (calcular) //Loop para insercao de dado correto
+        {
+            //Orientar usuario
+            printf("\n\nInforme o número [decimal inteiro positivo]: ");
+            scanf("%i", &e_num);
+
+            if (e_num > 1023) {
+                //Mesagem para a isercao de dado superior a 10 bits
+                printf("\nERRO: Numero inserido é maior que 10 bits\n");
+            } else {
+                //Mesagem para a resposta da conversao
+                printf("\n\nO %i em binário é: ", e_num);
+                calcular = 0;
+            }
+        }//Fim do Loop para insercao de dado correto
+
+        //Carregar vetor (9 a 0) com o resto da divisao
+        signed char i_carregar = 9;
+        do {
+            v_binario[i_carregar] = e_num % 2;
+            e_num = e_num / 2;
+            i_carregar--;
+
+        } while (i_carregar >= 0);
+
+        //Imprimir vetor (0 a 9)
+        unsigned char i_print;
+        for (i_print = 0; i_print <= 9; i_print++) {
+            printf("%i", v_binario[i_print]);
+
+        }
+        calcular = 1;
+    } //Fim do Loop infinito
+
+    return 0;
+}
