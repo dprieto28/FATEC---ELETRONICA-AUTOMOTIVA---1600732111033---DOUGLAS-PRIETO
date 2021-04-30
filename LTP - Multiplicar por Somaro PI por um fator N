@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+/**************
+Douglas Prieto - Fatec S.A.
+30/04/2021
+Multiplicar por soma
+ **************/
+
+int main(void) {
+
+    //Declarar variaveis
+    unsigned int e_num[2], s_produto = 0;
+
+    //Funcao do Programa
+    printf("\n\n\n*** MULTIPLICAR POR SOMA ***\n\n\n");
+
+    while (1) //Loop Infinito
+    {
+        for (unsigned int i = 0; i <= 1; i++) //Solicitar insercao de 2 numeros
+        {
+            printf("\n\nInforme um número [decimal inteiro positivo]: ");
+            scanf("%i", &e_num[i]);
+        }
+
+        //Somar o numero pela quantidade do multiplicador
+        unsigned int aux = 0;
+        while (e_num[1] > aux) {
+            s_produto += e_num[0];
+            aux++;
+        }
+
+        //Mostrar resultado
+        printf("\n\nO PRODUTO entre %i e %i é %i, \nrealizado por SOMA...", e_num[0], e_num[1], s_produto);
+
+        s_produto = 0; //Zerar resultado
+
+    }//Fim do Loop infinito
+
+    return 0;
+}
