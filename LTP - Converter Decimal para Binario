@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(void) {
+
+    /**************
+    Douglas Prieto - Fatec S.A.
+    May/2021
+    Conversao de Numero Decimal para Binario
+     **************/
+
+    //Variaveis
+    int e_decimal, resto;
+
+    //Funcao do Programa
+    printf("\n\n\n*** Decimal para Binário ***\n\n\n");
+
+    //Orientar usuario
+    printf("\n\nInforme um número [decimal inteiro positivo]: ");
+    scanf("%i", &e_decimal);
+
+    //Realizar as divisoes
+    int v_binario[10000];
+    int qtd_bit = 0;
+    while (e_decimal > 0) {
+        resto = e_decimal % 2;
+        e_decimal = e_decimal / 2;
+        v_binario[qtd_bit] = resto;
+        qtd_bit++;
+    }
+
+    //Imprimir de tras para frente
+    while (qtd_bit >= 0) {
+        printf("%i", v_binario[qtd_bit]);
+        qtd_bit--;
+    }
+
+    return 0;
+}
