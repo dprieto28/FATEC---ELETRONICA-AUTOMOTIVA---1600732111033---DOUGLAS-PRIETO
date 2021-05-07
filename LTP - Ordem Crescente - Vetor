@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main(void) {
+
+    /**************
+    Douglas Prieto - Fatec S.A.
+    May/2021
+    Classificar 5 numeros em ordem crescente (matriz)
+     **************/
+    
+    //Variaveis
+    float e_num[5], aux;
+
+    //Funcao do Programa
+    printf("\n\n\n*** CLASSIFICAR NUMEROS EM ORDEM CRESCENTE ***\n\n\n");
+
+    //Loop de insercao de dados
+    int i_txt = 1;
+    while (i_txt <= 5) {
+        printf("Insira numero %i: ", i_txt);
+        scanf("%f", &e_num[i_txt - 1]);
+        i_txt++;
+    }
+
+    //Imprimir sempre o menor numero    
+    int i_5x = 0;
+    while (i_5x < 5) {
+
+        //Verificar o menor numero
+        int i_menor = 0;
+        aux = e_num[i_menor];
+        while (i_menor < 4) {
+            if (aux > e_num[i_menor + 1]) {
+                aux = e_num[(i_menor + 1)];
+            }
+            i_menor++;
+        }
+
+        //Abastecer a posicao do menor numero com um numero grande
+        int i_posicao = 0;
+        while (aux != e_num[i_posicao]) {
+            i_posicao++;
+        }
+        e_num[i_posicao] = 999999999999999999;
+        i_5x++;
+
+
+        printf("%.2f\n", aux);
+
+    }
+
+    return 0;
+}
