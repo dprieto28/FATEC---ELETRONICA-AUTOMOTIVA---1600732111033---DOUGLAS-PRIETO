@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+/**************
+    Douglas Prieto - Fatec S.A.
+    May/2021
+ **************/
+
+int main(void) {
+    //Funcao do Programa
+    printf("\n\n*** Binario para Octal ***\n\n");
+
+    //Variaveis
+    unsigned long e_binario;
+    int v_bin[3] = {0, 0, 0};
+    int v_bin_s[4] = {0, 0, 0, 0};
+
+    //Orientar usuario
+    printf("\n\nInforme um número [binário inteiro positivo - 10 bit]:\n");
+    scanf("%ld", &e_binario);
+
+    //Colocar cada bit em conjunto de vetores de 3
+    while (e_binario != 0) {
+        int i = 2;
+        for (int a = 0; a <= 2; a++) {
+            v_bin[i] = e_binario % 10;
+            e_binario /= 10;
+            i--;
+        }
+        //Converter cada vetor de 3
+        int j;
+        v_bin_s[j] = v_bin[0]*4 + v_bin[1]*2 + v_bin[2]*1;
+        j++;
+    }
+
+    //Imprimir
+    int k = 3;
+    while (k >= 0) {
+        printf("%i", v_bin_s[k]);
+        k--;
+    }
+    return 0;
+}
