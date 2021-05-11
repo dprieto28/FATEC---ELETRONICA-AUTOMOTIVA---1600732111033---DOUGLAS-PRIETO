@@ -1,0 +1,78 @@
+#include <stdio.h>
+
+/**************
+    Douglas Prieto - Fatec S.A.
+    May/2021
+ **************/
+
+int main(void) {
+    //Funcao do Programa
+    printf("\n\n*** Matriz 4 x 4 ***\n\n");
+
+    //Variaveis
+    float v_L1[4] = {0, 0, 0, 0};
+    float v_L2[4] = {0, 0, 0, 0};
+    float v_L3[4] = {0, 0, 0, 0};
+    float v_L4[4] = {0, 0, 0, 0};
+    float soma = 0;
+    int linha = 1;
+
+    //Orientar usuario
+    int i = 1, j = 1;
+    for (int a = 1; a <= 4; a++) {
+        //Coletar colunas
+        for (int a = 1; a <= 4; a++) {
+            printf("\nInforme A%i%i: ", i, j);
+
+            switch (linha) {
+                case 1:
+                    scanf("%f", &v_L1[j - 1]);
+                    break;
+
+                case 2:
+                    scanf("%f", &v_L2[j - 1]);
+                    break;
+
+                case 3:
+                    scanf("%f", &v_L3[j - 1]);
+                    break;
+
+                case 4:
+                    scanf("%f", &v_L4[j - 1]);
+                    break;
+
+                default:
+                    break;
+            }
+
+            j++;
+        }
+        //Coletar linhas
+        i++;
+        j = 1;
+        linha++;
+    }
+
+    //Imprimir soma das linhas
+    printf("\n");
+    soma = v_L1[0] + v_L1[1] + v_L1[2] + v_L1[3];
+    printf("Somatória L1: %2.f\n", soma);
+    soma = v_L2[0] + v_L2[1] + v_L2[2] + v_L2[3];
+    printf("Somatória L2: %2.f\n", soma);
+    soma = v_L3[0] + v_L3[1] + v_L3[2] + v_L3[3];
+    printf("Somatória L3: %2.f\n", soma);
+    soma = v_L4[0] + v_L4[1] + v_L4[2] + v_L4[3];
+    printf("Somatória L4: %2.f\n", soma);
+    //Imprimir soma das colunas
+    printf("\n");
+    soma = v_L1[0] + v_L2[0] + v_L3[0] + v_L4[0];
+    printf("Somatória C1: %2.f\n", soma);
+    soma = v_L1[1] + v_L2[1] + v_L3[1] + v_L4[1];
+    printf("Somatória C2: %2.f\n", soma);
+    soma = v_L1[2] + v_L2[2] + v_L3[2] + v_L4[2];
+    printf("Somatória C3: %2.f\n", soma);
+    soma = v_L1[3] + v_L2[3] + v_L3[3] + v_L4[3];
+    printf("Somatória C4: %2.f\n", soma);
+
+    return 0;
+}
