@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <time.h>
+
+void delay(unsigned int ms); //Void delay em milisegundos
+
+int main(void) {
+
+    /**************
+    Douglas Prieto - Fatec S.A.
+    May/2021
+    Código de acordo com fluxograma fornecido
+     **************/
+
+    //Variaveis
+    unsigned int e_nro_1, e_nro_2, mmc, valor_aux;
+
+    //Funcao do Programa
+    printf("\n\n\n*** CÓDIGO DO FLUXOGRMA - LISTA 2 - EXERCÍCIO 1 ***\n\n\n");
+
+    //Processo 1
+    printf("Insira o primeiro número: ");
+    scanf("%i", &e_nro_1);
+    //Processo 2
+    printf("Insira o segundo número: ");
+    scanf("%i", &e_nro_2);
+    //Processo 3
+    mmc = 1;
+    //Processo 4
+    valor_aux = 2;
+    //Processo 5
+    while (e_nro_1 > 1 && e_nro_2 > 1) {
+        //Processo 6
+        while (((e_nro_1 % valor_aux) > 0) || ((e_nro_2 % valor_aux) > 0)) {
+            //*******************************
+            //******** PROVA DO LOOP INFINITO
+            printf("\nCódigo x Teste de Mesa: %i %i %i %i %i %i\n", e_nro_1, e_nro_2, mmc, valor_aux, (e_nro_1 % valor_aux), (e_nro_2 % valor_aux));
+            delay(2000);
+            //*******************************
+            //*******************************
+            //Processo 7
+            valor_aux++;
+        }
+        //Processo 8
+        if ((e_nro_1 % valor_aux) == 0) {
+            //Processo 9
+            e_nro_1--;
+        }
+        //Processo 10
+        if ((e_nro_2 % valor_aux) == 0) {
+            //Processo 11
+            e_nro_2--;
+        }
+        //Processo 12
+        mmc *= valor_aux;
+    }
+    //Processo 13
+    printf("\nmmc: %i", mmc);
+
+    return 0;
+}
+
+//**** Void delay em milisegundos
+//**** Requer #include <time.h>
+
+void delay(unsigned int ms) {
+    ms /= 1000;
+    unsigned int retTime = time(0) + ms;
+    while (time(0) < retTime);
+}
