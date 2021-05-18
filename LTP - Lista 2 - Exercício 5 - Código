@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <time.h>
+
+void delay(unsigned int seg); //Void delay em milisegundos
+
+int main(void) {
+
+    /**************
+    Douglas Prieto - Fatec S.A.
+    May/2021
+    Controle da Ventoinha Automotiva 70°C a 90°C
+     **************/
+
+    //Variaveis
+    unsigned int e_partida, temperatura = 20;
+
+    //Funcao do Programa
+    printf("\n\n\n*** CONTROLE DA VENTOINHA AUTOMOTIVA - 70°C A 90°C ***\n\n\n");
+
+    while (e_partida != 1) {
+        //Solicitar partida do automovel "1"
+        printf("\n\nPara dar partida, digite 1: ");
+        scanf("%i", &e_partida);
+    }
+
+    //Monitorar temperatura
+    while (e_partida == 1) {
+        //Ventoinha off
+        while (temperatura < 90) {
+            printf("\nTemperatura: %i°C     |     Ventoinha: OFF", temperatura);
+            temperatura++;
+            delay(1);
+        }
+        //Ventoinha on
+        while (temperatura > 70) {
+            printf("\nTemperatura: %i°C     |     Ventoinha: ON", temperatura);
+            temperatura--;
+            delay(1);
+        }
+    }
+    return 0;
+}
+
+//**** Void delay em segundos
+//**** Requer #include <time.h>
+
+void delay(unsigned int seg) {
+    unsigned int retTime = time(0) + seg;
+    while (time(0) < retTime);
+}
