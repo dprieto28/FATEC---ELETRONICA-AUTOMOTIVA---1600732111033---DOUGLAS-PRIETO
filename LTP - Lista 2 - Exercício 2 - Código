@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <time.h>
+
+void delay(unsigned int ms); //Void delay em milisegundos
+
+int main(void) {
+
+    /**************
+    Douglas Prieto - Fatec S.A.
+    May/2021
+    Contador com produto dos digitos
+     **************/
+
+    //Variaveis
+    unsigned int num = 99, produto;
+    int vetor[3];
+
+    //Funcao do Programa
+    printf("\n\n\n*** CONTADOR COM PRODUTO DOS DIGITOS ***\n\n\n");
+
+    //Realizar produto e impressoes ate 999
+    while (num < 999) {
+        num++;
+
+        //Separar digitos em vetor
+        vetor[0] = num / 100;
+        vetor[1] = (num - 100 * vetor[0]) / 10;
+        vetor[2] = (num - 100 * vetor[0])-(10 * vetor[1]);
+
+        //Produto dos digitos
+        produto = vetor[0] * vetor[1] * vetor[2];
+
+        //Imprimir resultados
+        printf("\n%i ( %i * %i * %i )", produto, vetor[0], vetor[1], vetor[2]);
+        delay(1000);
+    }
+    return 0;
+}
+
+//**** Void delay em milisegundos
+//**** Requer #include <time.h>
+
+void delay(unsigned int ms) {
+    ms /= 1000;
+    unsigned int retTime = time(0) + ms;
+    while (time(0) < retTime);
+}
