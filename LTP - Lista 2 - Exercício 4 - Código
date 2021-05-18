@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <time.h>
+
+void delay(unsigned int seg); //Void delay em segundos
+
+int main(void) {
+
+    /**************
+    Douglas Prieto - Fatec S.A.
+    May/2021
+    Controle de Seta e Luz de Emergência
+     **************/
+
+    //Variaveis
+    unsigned int e_comando;
+
+    //Funcao do Programa
+    printf("\n\n\n*** CONTROLE DE SETA E LUZ DE EMERGÊNCIA ***\n\n\n");
+    while (1) {
+        //Orientar usuário
+        printf("\n\n   Digite o comando:");
+        printf("\n        1 - Seta para a Esquerda");
+        printf("\n        2 - Luz de Emergência");
+        printf("\n        3 - Seta para a Direita");
+        printf("\n");
+        scanf("%i", &e_comando);
+
+        //Comandos
+        printf("\n");
+        switch (e_comando) {
+                //Seta para a Esquerda
+            case 1:
+                for (int i = 0; i < 10; i++) {
+                    printf("   Esquerda    ON XXX     |    --- OFF   Direita\n");
+                    delay(1);
+                    printf("   Esquerda   OFF ---     |    --- OFF   Direita\n");
+                    delay(1);
+                }
+                printf("   *************** FIM DO COMANDO ***************\n");
+                break;
+
+                //Luz de Emergencia
+            case 2:
+                for (int i = 0; i < 10; i++) {
+                    printf("   Esquerda    ON XXX     |    XXX ON    Direita\n");
+                    delay(1);
+                    printf("   Esquerda   OFF ---     |    --- OFF   Direita\n");
+                    delay(1);
+                }
+                printf("   *************** FIM DO COMANDO ***************\n");
+                break;
+
+                //Seta para a Direita
+            case 3:
+                for (int i = 0; i < 10; i++) {
+                    printf("   Esquerda   OFF ---     |    XXX ON    Direita\n");
+                    delay(1);
+                    printf("   Esquerda   OFF ---     |    --- OFF   Direita\n");
+                    delay(1);
+                }
+                printf("   *************** FIM DO COMANDO **************\n");
+                break;
+
+            default:
+                printf("Comando inválido!\n");
+        }
+
+    }
+    return 0;
+}
+
+//**** Void delay em segundos
+//**** Requer #include <time.h>
+
+void delay(unsigned int seg) {
+    unsigned int retTime = time(0) + seg;
+    while (time(0) < retTime);
+}
