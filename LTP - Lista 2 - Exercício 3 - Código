@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main(void) {
+
+    /**************
+    Douglas Prieto - Fatec S.A.
+    May/2021
+    Classificar 5 numeros em ordem decrescente (matriz)
+     **************/
+
+    //Variaveis
+    float e_num[5], s_num[5], aux;
+
+    //Funcao do Programa
+    printf("\n\n\n*** CLASSIFICAR NUMEROS EM ORDEM CRESCENTE ***\n\n\n");
+
+    //Loop de insercao de dados
+    int i_txt = 1;
+    while (i_txt <= 5) {
+        printf("Insira numero %i: ", i_txt);
+        scanf("%f", &e_num[i_txt - 1]);
+        i_txt++;
+    }
+
+    //***** Classificando
+    for (int j; j <= 4; j++) {
+        aux = e_num[0];
+        //Verificar o maior
+        for (int i = 0; i <= 4; i++) {
+            if (aux < e_num[i]) {
+                aux = e_num[i];
+            }
+        }
+        //Inserir numero pequeno na posicao do maior
+        for (int M = 0; M <= 4; M++) {
+            if (aux == e_num[M]) {
+                e_num[M] = -9999999999999999;
+                break;
+            }
+        }
+        //Inserir o maior em outro vetor
+        s_num[j] = aux;
+    }
+    //***** Classificando - FIM
+
+    //Imprimir novo vetor
+    printf("\n\nEm ordem decrescente:\n");
+    for (int k = 0; k <= 4; k++) {
+        printf("%.2f\n", s_num[k]);
+    }
+    return 0;
+}
